@@ -24,5 +24,13 @@ $ docker start (CONTAINER_ID)
 $ docker attach (CONTAINER_ID)
 ```
 
+## テスト
+
+```Shell
+$ cargo test
+or 
+$ cargo test (func_name)
+```
+
 ## 参考
 [RustでMVPなWebAPIサーバを開発する方法](https://zenn.dev/tetter/books/webapi-mvp-book)
