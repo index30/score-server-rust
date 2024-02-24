@@ -20,7 +20,8 @@ $ cargo new score-server-rust
 ### スプリントを回す時
 ```Shell
 $ cd score-server-rust
-$ docker run -it --name rust-dev -v "$(pwd)":/usr/src/score-server -e HOME=/usr/src/score-server --net=host rust:1.70-slim-buster /bin/bash
+$ docker start (CONTAINER_ID)
+$ docker attach (CONTAINER_ID)
 ```
 
 ## 参考
