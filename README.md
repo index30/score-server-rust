@@ -25,11 +25,16 @@ $ docker attach (CONTAINER_ID)
 ```
 
 ## テスト
-
+### 単体テスト
 ```Shell
 $ cargo test
 or 
 $ cargo test (func_name)
+```
+
+### 結合テスト
+```Shell
+$ cargo test --test (integration_file_name)
 ```
 
 ## 参考
