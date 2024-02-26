@@ -21,9 +21,10 @@ pub fn insert_user(
     service_name: &str)         -> Result<User, Error> {
 
 let new_user = NewUser { name, url_name };
+// insert_into: 挿入したいテーブルを指定
 diesel::insert_into(users::table)
-    .values(&new_user)
-    .get_result(conn)
+    .values(&new_user) // 値を渡す
+    .get_result(conn) // 接続を渡す
 }
 
 pub fn insert_exam(
@@ -48,3 +49,12 @@ diesel::insert_into(points::table)
     .values(&new_point)
     .get_result(conn)
 }
+
+// 新規userの挿入
+let new_user = insert_user(&conn, user_name, user_service_name)?;
+
+// 新規examの挿入
+let new_exam = insert_exam(&conn, exam_name, exam_description)?;
+
+// 新規のuserとexamのidを元にpointを挿入
+let _ = insert_adopt(&conn, new_user.id, new_exam.id, dt)?;

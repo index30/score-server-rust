@@ -6,5 +6,6 @@ CREATE TABLE points(
     exams_id BIGINT NOT NULL,
     FOREIGN KEY (exams_id) REFERENCES exams(id),
     --------
+    score BIGINT NOT NULL,
     entrance_at TIMESTAMP WITH TIME ZONE NOT NULL
 );
